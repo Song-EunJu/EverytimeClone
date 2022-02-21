@@ -1,0 +1,18 @@
+<form action="{% url 'create'%}" method="POST"> 
+    <!-- create 함수가 실행되어야하고, 게시글이 만들어지는 행위는 post (데이터를 처리해줘!) get: 갖다줘! -->
+    {% csrf_token %}
+    <!-- 보안을 위한 토큰 -->
+
+    <div>
+        <label for="title">제목</label><br/>
+        <input type="text" name="title" id="title">
+    </div>
+    <div>
+        <label for="body">본문</label><br/>
+        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" value="글 생성하기">
+</form>
+</form>
+<!-- submit 버튼 누른 순간 create url로  post 요청이 보내지는데 
+create url 은 create함수를 실행시켜주는 애, 즉 create함수에서 post 요청을 받게 됨-->
